@@ -141,17 +141,15 @@
 
 // function findMax(...numbers) {
 //   if (numbers.length === 0) {
-//     return null; 
+//     return null;
 //   }
 //   return Math.max(...numbers);
 // }
-
 
 // console.log("Максимум из 5, 12, 8, 3:", findMax(5, 12, 8, 3));
 // console.log("Максимум из объединенного массива:", findMax(...combinedArray));
 // console.log("Максимум из 100, 45, 78, 92:", findMax(100, 45, 78, 92));
 // console.log("---");
-
 
 // const user = {
 //   name: "Анна",
@@ -175,7 +173,6 @@
 // };
 
 // console.log("Объединенный объект (mergedUser):", mergedUser);
-
 
 // const obj1 = { a: 1, b: 2, c: 3 };
 // const obj2 = { b: 10, d: 4, e: 5 };
@@ -201,48 +198,248 @@
 // console.log(Utils.greet("Мария"));
 // console.log("Умножение:", Utils.multiply(3, 9));
 
+// import { square, cube, E } from './js/math.js';
 
-import { square, cube, E } from './js/math.js';
+// console.log("=== Тестирование математических функций ===\n");
 
+// console.log("Функция square:");
+// console.log(`Квадрат числа 5: ${square(5)}`);
+// console.log(`Квадрат числа -3: ${square(-3)}`);
+// console.log(`Квадрат числа 2.5: ${square(2.5)}`);
+// console.log(`Квадрат числа 0: ${square(0)}`);
 
-console.log("=== Тестирование математических функций ===\n");
+// console.log("\n---");
 
+// console.log("Функция cube:");
+// console.log(`Куб числа 3: ${cube(3)}`);
+// console.log(`Куб числа -2: ${cube(-2)}`);
+// console.log(`Куб числа 1.5: ${cube(1.5)}`);
+// console.log(`Куб числа 0: ${cube(0)}`);
 
-console.log("Функция square:");
-console.log(`Квадрат числа 5: ${square(5)}`);       
-console.log(`Квадрат числа -3: ${square(-3)}`);    
-console.log(`Квадрат числа 2.5: ${square(2.5)}`);   
-console.log(`Квадрат числа 0: ${square(0)}`);     
+// console.log("\n---");
 
-console.log("\n---");
+// console.log("Константа E:");
+// console.log(`Число Эйлера (E): ${E}`);
+// console.log(`E^2: ${square(E)}`);
+// console.log(`E^3: ${cube(E)}`);
 
+// console.log("\n---");
 
-console.log("Функция cube:");
-console.log(`Куб числа 3: ${cube(3)}`);              
-console.log(`Куб числа -2: ${cube(-2)}`);            
-console.log(`Куб числа 1.5: ${cube(1.5)}`);        
-console.log(`Куб числа 0: ${cube(0)}`);             
+// console.log("Дополнительные тесты:");
+// console.log(`5² + 3³ = ${square(5)} + ${cube(3)} = ${square(5) + cube(3)}`);
+// console.log(`(2 + 3)² = ${square(2 + 3)}`);
+// console.log(`2² + 3² = ${square(2)} + ${square(3)} = ${square(2) + square(3)}`);
 
-console.log("\n---");
+// console.log("\n--- Проверка обработки ошибок ---");
+// try {
+//   console.log(square("string"));
+// } catch (error) {
+//   console.log("Ошибка:", error.message);
+// }
 
+// console.log("Промисы");
 
-console.log("Константа E:");
-console.log(`Число Эйлера (E): ${E}`);
-console.log(`E^2: ${square(E)}`);
-console.log(`E^3: ${cube(E)}`);
+// const simplePromise = new Promise((resolve, reject) => {
+//   const success = true;
+//   if (success) {
+//     resolve("Операция выполнена успешно!");
+//   } else {
+//     reject("Произошла ошибка!");
+//   }
+// });
 
-console.log("\n---");
+// simplePromise.then((result) => console.log("Результат:", result)).catch((error) => console.log("Ошибка:", error));
 
+// function delay(ms) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(`Прошло ${ms} миллисекунд`);
+//     }, ms);
+//   });
+// }
 
-console.log("Дополнительные тесты:");
-console.log(`5² + 3³ = ${square(5)} + ${cube(3)} = ${square(5) + cube(3)}`);
-console.log(`(2 + 3)² = ${square(2 + 3)}`);
-console.log(`2² + 3² = ${square(2)} + ${square(3)} = ${square(2) + square(3)}`);
+// delay(1000).then((message) => console.log(message));
 
+// function fetchUserData(userId) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (userId > 0) {
+//         resolve({
+//           id: userId,
+//           name: "Иван Иванов",
+//           email: "ivan@example.com",
+//         });
+//       } else {
+//         reject("Неверный ID пользователя");
+//       }
+//     }, 1500);
+//   });
+// }
+// fetchUserData(1)
+// .then((user) => console.log("Пользователь:", user))
+// .catch((error) => console.log("Ошибка:", error));
 
-console.log("\n--- Проверка обработки ошибок ---");
-try {
-  console.log(square("string"));
-} catch (error) {
-  console.log("Ошибка:", error.message);
+// function step1() {
+// return new Promise((resolve) => {
+// setTimeout(() => resolve("Шаг 1 завершён"), 500);
+// });
+// }
+
+// function step2 (previousResult) {
+// return new Promise((resolve) => {
+// setTimeout(() => resolve(`${previousResult} -> Шаг 2 завершён`), 500);
+// });
+// }
+
+// function step3 (previousResult) {
+// return new Promise((resolve) => {
+// setTimeout(() => resolve(`${previousResult} -> Шаг 3 завершён`), 500);
+// });
+// }
+
+// step1()
+// .then ((result1) => step2(result1))
+// .then((result2) => step3(result2))
+// .then((finalResult) => console.log("Финальный результат:", finalResult))
+// .catch((error) => console.log("Ошибка в цепочке:", error));
+
+function checkInventory(productName, quantity) {
+  return new Promise((resolve, reject) => {
+
+    const inventory = {
+      "ноутбук": { price: 45000, inStock: 10 },
+      "смартфон": { price: 25000, inStock: 5 },
+      "наушники": { price: 3000, inStock: 0 },
+      "клавиатура": { price: 2000, inStock: 3 },
+      "монитор": { price: 15000, inStock: 0 }
+    };
+    
+
+    const product = productName.toLowerCase();
+    
+    setTimeout(() => {
+      if (!inventory[product]) {
+        reject(new Error(`Товар "${productName}" не найден в базе данных`));
+        return;
+      }
+      
+      const availableQuantity = inventory[product].inStock;
+      
+    
+      if (availableQuantity > 0 && quantity <= availableQuantity) {
+        resolve({
+          success: true,
+          message: ` Товар "${productName}" в наличии!`,
+          details: {
+            product: productName,
+            requested: quantity,
+            available: availableQuantity,
+            price: inventory[product].price,
+            totalCost: inventory[product].price * quantity
+          }
+        });
+      } 
+
+      else if (availableQuantity === 0) {
+        reject(new Error(`Товар "${productName}" отсутствует на складе`));
+      } 
+      else {
+        reject(new Error(` Недостаточно товара "${productName}". Доступно: ${availableQuantity}, запрошено: ${quantity}`));
+      }
+    }, 1500); 
+  });
 }
+
+console.log(" Проверка наличия товаров...\n");
+
+console.log(" Запрос 1: Ноутбук (2 шт.)");
+checkInventory("ноутбук", 2)
+  .then(result => {
+    console.log(result.message);
+    console.log(`   Цена за единицу: ${result.details.price} руб.`);
+    console.log(`   Общая стоимость: ${result.details.totalCost} руб.`);
+    console.log(`   Доступно на складе: ${result.details.available} шт.\n`);
+  })
+  .catch(error => {
+    console.error(error.message);
+    console.log();
+  });
+
+
+console.log(" Запрос 2: Смартфон (3 шт.)");
+checkInventory("смартфон", 3)
+  .then(result => {
+    console.log(result.message);
+    console.log(`  Цена за единицу: ${result.details.price} руб.`);
+    console.log(`  Общая стоимость: ${result.details.totalCost} руб.`);
+    console.log(`   Доступно на складе: ${result.details.available} шт.\n`);
+  })
+  .catch(error => {
+    console.error(error.message);
+    console.log();
+  });
+
+console.log(" Запрос 3: Наушники (1 шт.)");
+checkInventory("наушники", 1)
+  .then(result => {
+    console.log(result.message);
+    console.log(`   Общая стоимость: ${result.details.totalCost} руб.\n`);
+  })
+  .catch(error => {
+    console.error(error.message);
+    console.log();
+  });
+
+
+console.log(" Запрос 4: Клавиатура (10 шт.)");
+checkInventory("клавиатура", 10)
+  .then(result => {
+    console.log(result.message);
+  })
+  .catch(error => {
+    console.error(error.message);
+    console.log();
+  });
+
+
+console.log(" Запрос 5: Планшет (1 шт.)");
+checkInventory("планшет", 1)
+  .then(result => {
+    console.log(result.message);
+  })
+  .catch(error => {
+    console.error(error.message);
+    console.log();
+  });
+
+
+console.log(" Запрос 6: Цепочка проверок");
+checkInventory("монитор", 2)
+  .then(result => {
+    console.log(result.message);
+    console.log(`   Но, к сожалению, товара нет в наличии.`);
+
+    return checkInventory("клавиатура", 1);
+  })
+  .then(result => {
+    console.log(result.message);
+    console.log(`   Цена: ${result.details.price} руб.`);
+    console.log(`   Общая стоимость: ${result.details.totalCost} руб.\n`);
+  })
+  .catch(error => {
+    console.error(` Ошибка в цепочке: ${error.message}\n`);
+  });
+
+console.log("Запрос 7: Дополнительная проверка (смартфон, 2 шт.)");
+checkInventory("смартфон", 2)
+  .then(result => {
+    console.log(result.message);
+    console.log(`   Цена: ${result.details.price} руб.`);
+    console.log(`   Общая стоимость: ${result.details.totalCost} руб.`);
+  })
+  .catch(error => {
+    console.error(error.message);
+  })
+  .finally(() => {
+    console.log("    Проверка завершена (finally всегда выполняется)\n");
+  });
